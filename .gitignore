@@ -2,6 +2,8 @@
 target
 *_bk.sh
 *.kate-swp
+.metadata
+log
 
 y_s_util
 mavenrep
