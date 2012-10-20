@@ -61,35 +61,7 @@ chmod 775 mvn
 }
 
 ##########################################################################
-func_mvn_local_sh_NG!!!!! ()
-{
-cd $HOME/bin
 
-pwd
-CP_CMD="cp -ipv $M3_HOME/conf/settings.xml ."
-echo -e I will do command !!! : \"${CP_CMD}\"
-${CP_CMD}
-
-MVN_SH='#!/bin/sh
-
-HERE=$(cd $(dirname $0);pwd);
-
-'M3_HOME=$M3_HOME'
-PATH=$M3_HOME/bin:$PATH
-
-#JAVA_HOME=/usr/local/java
-#JAVA_HOME=$HOME/opt/java
-#PATH=${JAVA_HOME}/bin:$PATH
-
-sh $M3_HOME/bin/mvn -s ${HOME}/bin/settings.xml $*
-'
-echo "$MVN_SH" > mvn_localsetting
-chmod 775 mvn_localsetting
-}
-
-##########################################################################
-
-#func_mkdirs
-#func_install_maven
+func_mkdirs
+func_install_maven
 func_mvn_sh
-#func_mvn_local_sh

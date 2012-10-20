@@ -75,6 +75,33 @@ git config --global diff.external extDiff.sh
 
 ##########################################################################
 
+##########################################################################
+# winmerge to meld shell pretend
+##########################################################################
+func_dummy_meld_sh ()
+{
+cd $HOME/bin
+
+MELD_SH='#!/bin/sh
+
+WINMERGE_PATH=/c/programs/editor/WinMerge/WinMergeU
+${WINMERGE_PATH} $*
+
+'
+
+echo "$MELD_SH" > meld
+chmod 775 meld
+}
+##########################################################################
+
+
+
+
+
 func_git_config_sh
-#func_mkdirs
+func_mkdirs
 func_git_extDiff_sh
+
+# for windows mingw shell
+#func_dummy_meld_sh
+
